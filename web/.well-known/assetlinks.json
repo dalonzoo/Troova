@@ -1,0 +1,12 @@
+[
+ {
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+   "namespace": "android_app",
+   "package_name": "com.exchange.exchange_hub",
+   "sha256_cert_fingerprints": [
+    "D8:34:9D:A7:7E:F6:C3:42:A0:5B:E8:B4:24:52:0F:22:F8:52:70:7E:7D:6A:8D:79:8E:A7:AA:27:82:60:EC:8A"
+   ]
+  }
+ }
+]

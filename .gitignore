@@ -1,0 +1,73 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.pub/
+.pub-cache/
+build/
+**/doc/api/
+
+# IntelliJ related
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code related
+.vscode/
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+*.sublime-workspace
+
+# Sensitive files
+.env
+*.env
+key.properties
+/android/key.properties
+/ios/Runner/GoogleService-Info.plist
+/firebase_service_account.json
+/assets/.env
+
+# Android related
+/android/app/build/
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
+/android/.gradle/
+/android/local.properties
+/android/app/google-services.json
+
+# iOS related
+/ios/Pods/
+/ios/Podfile.lock
+/ios/.symlinks/
+/ios/Flutter/App.framework
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/.last_build_id
+
+# macOS related
+/macos/build/
+/macos/Flutter/ephemeral/
+/macos/.symlinks/
+/macos/Pods/
+/macos/Podfile.lock
+
+# Linux related
+/linux/build/
+/linux/CMakeLists.txt.user
+/linux/ephemeral/
+
+# Windows related
+/windows/build/
+/windows/runner/Debug/
+/windows/runner/Profile/
+/windows/runner/Release/
+/windows/ephemeral/
+/windows/CMakeLists.txt.user
+
+# Generated files
+lib/firebase_options.dart
