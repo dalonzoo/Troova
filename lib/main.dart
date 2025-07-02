@@ -6,9 +6,11 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
-import 'chat/screens/screens.dart';
-import 'chat/services/services.dart';
-import 'mainScreens/SplashScreen.dart';
+import 'features/chat/screens/chat_screen.dart';
+import 'api/services/auth_service.dart';
+import 'api/services/chat_service.dart';
+import 'api/services/firebase_notification_service.dart';
+import 'features/core/screens/SplashScreen.dart';
 
 
 
