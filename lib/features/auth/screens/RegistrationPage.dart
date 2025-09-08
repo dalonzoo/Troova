@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:age_calculator/age_calculator.dart';
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,15 +6,13 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_maps_webservice/directions.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:googleapis/people/v1.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../screens/ContactInfoPage.dart';
+import '../screens/contact_info_page.dart';
 import '../../core/screens/HomeView.dart';
 import '../../../shared/profile.dart';
-import '../screens/ProfileSkillsPage.dart';
-import '../screens/login_view.dart';
+import '../screens/LoginView.dart';
 
 class RegistrationPage extends StatefulWidget {
   bool completeReg;

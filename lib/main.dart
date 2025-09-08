@@ -1,9 +1,6 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
 import 'features/chat/screens/chat_screen.dart';
@@ -20,7 +17,22 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  
+  // Gestione sicura del caricamento .env
+  try {
+    await dotenv.load(fileName: ".env");
+    print("✅ File .env caricato dalla root");
+  } catch (e) {
+    try {
+      // Prova a caricare dalle assets
+      await dotenv.load(fileName: "assets/.env");
+      print("✅ File .env caricato da assets");
+    } catch (e2) {
+      print("⚠️ File .env non trovato: $e2");
+      // Procediamo comunque senza .env
+    }
+  }
+  
   runApp(
     MultiProvider(
       providers: [
@@ -46,20 +58,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration.zero, () {
-      _initializeApp();
-    });
+    // Rimuoviamo l'inizializzazione qui perché viene fatta nel SplashScreen
   }
 
-  Future<void> _initializeApp() async {
-    await Firebase.initializeApp();
-    const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@mipmap/ic_launcher');
-    final InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid);
-    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
-    FirebaseNotificationService notificationService = FirebaseNotificationService(navigatorKey: navigatorKey);
-    await notificationService.initialize();
-    MobileAds.instance.initialize();
-  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -1,19 +1,7 @@
 import 'dart:convert';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter/cupertino.dart';
-
-// File: chat_screen.dart
 import 'package:flutter/material.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:googleapis/connectors/v1.dart';
-import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import 'package:troova/shared/profile.dart';
 import 'package:troova/models/chat_model.dart';
 import 'package:troova/api/services/auth_service.dart';
 import 'package:troova/api/services/chat_service.dart';
@@ -32,20 +20,11 @@ class ChatListScreen extends StatefulWidget {
 class _ChatListScreenState extends State<ChatListScreen> {
   @override
   Widget build(BuildContext context) {
-    final authService = Prov.Provider.of<AuthService>(context, listen: false);
-    final chatService = Prov.Provider.of<ChatService>(context, listen: false);
+    final authService = Provider.of<AuthService>(context, listen: false);
+    final chatService = Provider.of<ChatService>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(title: Text('My Chats')),
-      bottomNavigationBar: Container(
-        height: 50,
-        child: AdWidget(ad: BannerAd(
-          adUnitId: 'ca-app-pub-1684693149887110/5721835277', // Replace with your actual ad unit ID
-          size: AdSize.banner,
-          request: AdRequest(),
-          listener: BannerAdListener(),
-        )..load()),
-      ),
       body: FutureBuilder<String>(
         future: authService.getCurrentUserId(),
         builder: (context, snapshot) {
@@ -74,7 +53,11 @@ class _ChatListScreenState extends State<ChatListScreen> {
                 itemCount: chats.length,
                 itemBuilder: (context, index) {
                   final chat = chats[index];
-                  return ChatListItem(chat: chat, userId: widget.userId);
+                  return ChatListItem(
+                    chat: chat, 
+                    userId: widget.userId,
+                    adId: '', // Provide empty adId since we removed ads
+                  );
                 },
               );
             },

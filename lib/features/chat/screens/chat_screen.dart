@@ -18,7 +18,7 @@ import 'package:troova/models/ad_model.dart';
 import 'package:troova/models/message_model.dart';
 import 'package:troova/api/services/chat_service.dart';
 import 'package:troova/api/services/database_service.dart';
-import 'package:troova/features/ads/screens/ad_detail_page.dart';
+import 'package:troova/features/ads/screens/AdDetailPage.dart';
 import 'package:troova/features/chat/widgets/message_bubble.dart';
 
 class ChatScreen extends StatefulWidget {

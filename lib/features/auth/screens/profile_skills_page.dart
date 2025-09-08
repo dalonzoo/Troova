@@ -70,7 +70,7 @@ class _ProfileSkillsPageState extends State<ProfileSkillsPage> {
                 decoration: BoxDecoration(
                   color: Colors.blueGrey[50],
                   borderRadius: BorderRadius.circular(12.0),
-                  box boxShadow: [
+                  boxShadow: [
                     BoxShadow(
                       color: Colors.blueGrey.withOpacity(0.1),
                       blurRadius: 10.0,

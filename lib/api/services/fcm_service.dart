@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 class FCMService {
 
 //get the access token with the .json file downloaded from google cloud console
-  Future<String> _getAccessToken() async {
+  Future<String> getAccessToken() async {
     try {
       //the scope url for the firebase messaging
       String firebaseMessagingScope =
@@ -46,7 +46,7 @@ class FCMService {
         required String title,
         required String body,
         Map<String, dynamic>? additionalData}) async {
-    final String accessToken = await _getAccessToken();
+    final String accessToken = await getAccessToken();
     //Input the project_id value in the .json file downloaded from the google cloud console
     final String? projectId = dotenv.env['FIREBASE_PROJECT_ID'];
     final String fcmEndpoint = "https://fcm.googleapis.com/v1/projects/${projectId}";

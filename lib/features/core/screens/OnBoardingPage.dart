@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../auth/screens/registration_page.dart';
-import '../../auth/screens/login_view.dart';
+import '../../auth/screens/RegistrationPage.dart';
+import '../../auth/screens/LoginView.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override

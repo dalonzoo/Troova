@@ -24,14 +24,11 @@ class FirebaseNotificationService {
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
     const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@mipmap/ic_launcher');
-    final DarwinInitializationSettings initializationSettingsIOS = DarwinInitializationSettings(
+    final DarwinInitializationSettings initializationSettingsIOS =
+    const DarwinInitializationSettings(
       requestAlertPermission: true,
       requestBadgePermission: true,
       requestSoundPermission: true,
-      onDidReceiveLocalNotification: (int id, String? title, String? body, String? payload) async {
-        // Handle iOS foreground notification
-        _handleNotificationTap(json.decode(payload ?? '{}'));
-      },
     );
     final InitializationSettings initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,

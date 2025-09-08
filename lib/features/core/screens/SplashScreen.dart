@@ -9,10 +9,10 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app_links/app_links.dart';
 import '../../../firebase_options.dart';
-import '../../auth/screens/registration_page.dart';
-import '../../auth/screens/login_view.dart';
+import '../../auth/screens/RegistrationPage.dart';
+import '../../auth/screens/LoginView.dart';
 import '../../../shared/profile.dart';
-import 'home_view.dart';
+import 'HomeView.dart';
 
 class SplashScreen extends StatefulWidget {
 
@@ -41,18 +41,32 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void initFirebase() async {
-    await Future.delayed(Duration(seconds: 2, milliseconds: 500));
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    ).whenComplete(() async {
+    try {
+      print("🔄 Inizializzazione Firebase...");
+      await Future.delayed(Duration(seconds: 2, milliseconds: 500));
+      
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      print("✅ Firebase inizializzato");
+      
+      // Commentiamo temporaneamente FirebaseAppCheck per debug
+      /*
       await FirebaseAppCheck.instance.activate(
         webProvider: ReCaptchaV3Provider('recaptcha-v3-site-key'),
         androidProvider: AndroidProvider.debug,
         appleProvider: AppleProvider.appAttest,
       );
+      print("✅ Firebase App Check attivato");
+      */
+      
       checkDeepLink();
       checkLoginStatus();
-    });
+    } catch (e) {
+      print("❌ Errore inizializzazione Firebase: $e");
+      // Procediamo comunque con il check dello stato di login
+      checkLoginStatus();
+    }
   }
 
   void checkDeepLink() async {

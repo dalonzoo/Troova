@@ -28,7 +28,7 @@ import '../../ads/screens/AdDetailPageShared.dart';
 import '../../ads/screens/CreateAdPage.dart';
 import '../../ads/screens/SupportPage.dart';
 import '../../ads/screens/UsersAdPage.dart';
-import '../../auth/screens/login_view.dart';
+import '../../auth/screens/LoginView.dart';
 import '../../../shared/constants.dart';
 import '../../../api/services/profile_service.dart';
 import '../../../shared/profile.dart';

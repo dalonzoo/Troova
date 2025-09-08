@@ -44,7 +44,7 @@ class ChatService {
         title: 'Nuovo messaggio da $name',
         body: '',
       );
-      String accessToken = await FCMService()._getAccessToken();
+      String accessToken = await FCMService().getAccessToken();
       //await sendFcmNotification(fcmToken, message.text, chatId,accessToken,userId,otherUserId,adId);
     }
   }
