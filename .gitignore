@@ -30,7 +30,7 @@ key.properties
 /ios/Runner/GoogleService-Info.plist
 /firebase_service_account.json
 /assets/.env
-
+/android/app/upload_certificates.json
 # Android related
 /android/app/build/
 /android/app/debug/
@@ -71,3 +71,4 @@ key.properties
 
 # Generated files
 lib/firebase_options.dart
+android/app/upload_certificate.pem
