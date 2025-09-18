@@ -1,131 +1,131 @@
 # Troova
 
-![Logo di Troova](assets/icons/logo_foreground.png)
+![Troova Logo](assets/icons/logo_foreground.png)
 
-**Troova** è un'applicazione mobile cross-platform progettata per connettere persone che offrono e cercano servizi a livello locale. Sviluppata con Flutter, l'app offre un'esperienza utente fluida e reattiva su Android, iOS e altre piattaforme supportate.
-
----
-
-## 📜 Indice
-
-- [Riguardo al Progetto](#-riguardo-al-progetto)
-- [✨ Funzionalità Principali](#-funzionalità-principali)
-- [🛠️ Tecnologie e Architettura](#️-tecnologie-e-architettura)
-  - [Pila Tecnologica](#pila-tecnologica)
-  - [Architettura](#architettura)
-- [🚀 Come Iniziare](#-come-iniziare)
-  - [Prerequisiti](#prerequisiti)
-  - [Installazione](#installazione)
-- [🔧 Configurazione](#-configurazione)
-- [🤝 Contribuire](#-contribuire)
-- [📄 Licenza](#-licenza)
+**Troova** is a cross-platform mobile application designed to connect people who offer and seek local services. Built with Flutter, the app delivers a smooth and responsive user experience across Android, iOS, and other supported platforms.
 
 ---
 
-## 📜 Riguardo al Progetto
+## 📜 Table of Contents
 
-L'obiettivo di Troova è creare un ecosistema semplice e intuitivo dove gli utenti possono pubblicare annunci per i servizi che offrono (es. ripetizioni, giardinaggio, consulenze) e, allo stesso tempo, trovare e contattare professionisti e fornitori di servizi nella loro zona. L'app include funzionalità di chat in tempo reale, gestione degli annunci e profili utente dettagliati.
+- [About the Project](#-about-the-project)
+- [✨ Key Features](#-key-features)
+- [🛠️ Technology Stack & Architecture](#️-technology-stack--architecture)
+  - [Technology Stack](#technology-stack)
+  - [Architecture](#architecture)
+- [🚀 Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [🔧 Configuration](#-configuration)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
 ---
 
-## ✨ Funzionalità Principali
+## 📜 About the Project
 
-- **Creazione e Gestione Annunci**: Gli utenti possono creare annunci dettagliati per i servizi che offrono, modificarli e gestirli dal proprio profilo.
-- **Ricerca e Filtri**: Trova servizi in base a categorie, parole chiave e posizione geografica.
-- **Profili Utente**: Ogni utente ha un profilo con informazioni di contatto, competenze e gli annunci pubblicati.
-- **Chat Integrata**: Comunica in modo sicuro con altri utenti direttamente all'interno dell'app per discutere dettagli e accordi.
-- **Registrazione e Autenticazione**: Accesso facile e sicuro tramite email/password e account Google.
-- **Supporto Utente**: Una sezione dedicata per ricevere supporto e assistenza.
+Troova aims to create a simple and intuitive ecosystem where users can publish listings for the services they offer (e.g., tutoring, gardening, consulting) while also finding and contacting professionals and service providers in their area. The app includes real-time chat functionality, listing management, and detailed user profiles.
 
 ---
 
-## 🛠️ Tecnologie e Architettura
+## ✨ Key Features
 
-### Pila Tecnologica
+- **Listing Creation & Management**: Users can create detailed listings for services they offer, edit them, and manage them from their profile.
+- **Search & Filtering**: Find services based on categories, keywords, and geographic location.
+- **User Profiles**: Each user has a comprehensive profile with contact information, skills, and published listings.
+- **Integrated Chat**: Secure communication with other users directly within the app to discuss details and arrangements.
+- **Registration & Authentication**: Easy and secure access via email/password and Google accounts.
+- **User Support**: Dedicated section for receiving support and assistance.
 
-- **Framework**: [Flutter](https://flutter.dev/) (SDK Version) - Per lo sviluppo di un'unica codebase per Android, iOS, Web e Desktop.
-- **Linguaggio**: [Dart](https://dart.dev/)
+---
+
+## 🛠️ Technology Stack & Architecture
+
+### Technology Stack
+
+- **Framework**: [Flutter](https://flutter.dev/) - Cross-platform development with a single codebase for Android, iOS, Web, and Desktop.
+- **Language**: [Dart](https://dart.dev/)
 - **Backend & Database**: [Firebase](https://firebase.google.com/)
-  - **Firestore**: Come database NoSQL per la gestione di annunci, chat e dati utente.
-  - **Firebase Authentication**: Per l'autenticazione degli utenti (Email/Password, Google Sign-In).
-  - **Firebase Storage**: (Potenzialmente) per l'archiviazione di immagini per profili e annunci.
-- **API Esterne**:
-  - **Google Places API**: Per la ricerca e l'autocompletamento degli indirizzi durante la registrazione e la creazione di annunci.
-- **Gestione dello Stato**: [Provider / BLoC / Riverpod / GetX] - *Inserire la libreria specifica utilizzata nel progetto.*
+  - **Firestore**: NoSQL database for managing listings, chats, and user data.
+  - **Firebase Authentication**: User authentication (Email/Password, Google Sign-In).
+  - **Firebase Storage**: Image storage for profiles and listings.
+- **External APIs**:
+  - **Google Places API**: Address search and autocomplete during registration and listing creation.
+- **State Management**: [Provider / BLoC / Riverpod / GetX] - *Specify the actual library used in the project.*
 
-### Architettura
+### Architecture
 
-- **Cross-Platform**: L'architettura del progetto è basata su Flutter, garantendo che l'applicazione possa essere compilata nativamente per più piattaforme da un'unica codebase.
-- **Struttura a Moduli (Feature-based)**: Il codice sorgente nella directory `lib/` è organizzato per funzionalità (es. `chat`, `serviceAdv`, `signInUp`), promuovendo la manutenibilità e la scalabilità del codice.
-- **UI Component-Based**: L'interfaccia utente è costruita utilizzando un sistema di widget riutilizzabili (`customWidgets`), seguendo i principi di progettazione di Flutter.
-- **Backend as a Service (BaaS)**: L'applicazione si affida pesantemente ai servizi di Firebase, riducendo la necessità di un backend custom. La logica di business principale risiede nell'app client, che comunica direttamente con le API di Firebase.
-- **Services Layer**: La logica di interazione con servizi esterni (come Firestore) è astratta in classi di servizio (es. `FirestoreService.dart`), separando la logica di business dalla manipolazione diretta dei dati.
+- **Cross-Platform**: The project architecture is based on Flutter, ensuring the application can be natively compiled for multiple platforms from a single codebase.
+- **Feature-Based Modular Structure**: Source code in the `lib/` directory is organized by features (e.g., `chat`, `serviceAdv`, `signInUp`), promoting code maintainability and scalability.
+- **Component-Based UI**: The user interface is built using a system of reusable widgets (`customWidgets`), following Flutter's design principles.
+- **Backend as a Service (BaaS)**: The application heavily relies on Firebase services, reducing the need for a custom backend. Core business logic resides in the client app, which communicates directly with Firebase APIs.
+- **Services Layer**: Logic for interacting with external services (like Firestore) is abstracted into service classes (e.g., `FirestoreService.dart`), separating business logic from direct data manipulation.
 
 ---
 
-## 🚀 Come Iniziare
+## 🚀 Getting Started
 
-Per ottenere una copia locale del progetto e farlo funzionare, segui questi semplici passaggi.
+To get a local copy of the project up and running, follow these simple steps.
 
-### Prerequisiti
+### Prerequisites
 
-Assicurati di avere installato:
+Make sure you have the following installed:
 - [Flutter SDK](https://docs.flutter.dev/get-started/install)
-- Un editor di codice come [VS Code](https://code.visualstudio.com/) o [Android Studio](https://developer.android.com/studio)
-- Un account [Firebase](https://firebase.google.com/)
+- A code editor such as [VS Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio)
+- A [Firebase](https://firebase.google.com/) account
 
-### Installazione
+### Installation
 
-1. **Clona il repository**
+1. **Clone the repository**
    ```sh
-   git clone https://github.com/tuo-username/Troova.git
+   git clone https://github.com/your-username/Troova.git
    ```
-2. **Naviga nella directory del progetto**
+2. **Navigate to the project directory**
    ```sh
    cd Troova
    ```
-3. **Configura Firebase**
-   - Crea un nuovo progetto sulla [console di Firebase](https://console.firebase.google.com/).
-   - Aggiungi un'app Android e/o iOS al tuo progetto Firebase.
-   - **Per Android**: Scarica il file `google-services.json` e posizionalo in `android/app/`.
-   - **Per iOS**: Scarica il file `GoogleService-Info.plist` e configuralo nel tuo progetto Xcode.
-   - Abilita i servizi necessari come **Firestore Database** e **Authentication** (con i provider Google e Email/Password).
+3. **Configure Firebase**
+   - Create a new project in the [Firebase Console](https://console.firebase.google.com/).
+   - Add an Android and/or iOS app to your Firebase project.
+   - **For Android**: Download the `google-services.json` file and place it in `android/app/`.
+   - **For iOS**: Download the `GoogleService-Info.plist` file and configure it in your Xcode project.
+   - Enable the necessary services such as **Firestore Database** and **Authentication** (with Google and Email/Password providers).
 
-4. **Installa le dipendenze Dart**
+4. **Install Dart dependencies**
    ```sh
    flutter pub get
    ```
 
-5. **Avvia l'applicazione**
+5. **Run the application**
    ```sh
    flutter run
    ```
 
 ---
 
-## 🔧 Configurazione
+## 🔧 Configuration
 
-Il progetto potrebbe richiedere delle chiavi API o configurazioni di ambiente specifiche.
-- Un file `.env` è presente nella cartella `assets/`. Assicurati di popolarlo con le variabili d'ambiente necessarie, come le chiavi per l'API di Google Places.
+The project may require specific API keys or environment configurations.
+- An `.env` file is located in the `assets/` folder. Make sure to populate it with the necessary environment variables, such as the Google Places API key.
   ```
-  GOOGLE_MAPS_API_KEY=LA_TUA_CHIAVE_API
+  GOOGLE_MAPS_API_KEY=YOUR_API_KEY
   ```
-- Il file `assets/firebase_service_account.json` è utilizzato per l'accesso admin al backend. **NON INCLUDERE QUESTO FILE IN REPOSITORY PUBBLICI**. Deve essere generato dal tuo progetto Firebase e gestito in modo sicuro.
+- The `assets/firebase_service_account.json` file is used for admin access to the backend. **DO NOT INCLUDE THIS FILE IN PUBLIC REPOSITORIES**. It must be generated from your Firebase project and handled securely.
 
 ---
 
-## 🤝 Contribuire
+## 🤝 Contributing
 
-I contributi sono ciò che rende la comunità open source un posto fantastico per imparare, ispirare e creare. Qualsiasi contributo tu faccia sarà **molto apprezzato**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1.  Forka il Progetto
-2.  Crea il tuo Branch per la feature (`git checkout -b feature/AmazingFeature`)
-3.  Committa le tue modifiche (`git commit -m 'Add some AmazingFeature'`)
-4.  Pusha sul Branch (`git push origin feature/AmazingFeature`)
-5.  Apri una Pull Request
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## 📄 Licenza
+## 📄 License
 
-Distribuito sotto la Licenza [MIT / Apache 2.0 / etc.]. Vedi `LICENSE` per maggiori informazioni.
+Distributed under the [MIT / Apache 2.0 / etc.] License. See `LICENSE` for more information.
